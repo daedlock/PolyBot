@@ -5,8 +5,8 @@ const prefix = '!'
 const commands = {
     titan: require('./commands/titan'),
     iron: require('./commands/iron'),
-    tcr: require('./commands/tcr'),
-    ecr: require('./commands/ecr'),
+    tcr: require('./commands/cr'),
+    ecr: require('./commands/cr'),
 }
 const client = new Discord.Client()
 
