@@ -1,10 +1,7 @@
 require('dotenv').config()
 
 const Discord = require('discord.js')
-const config = require('./config.json')
-
 const prefix = '!'
-
 const commands = {
     titan: require('./commands/titan'),
     iron: require('./commands/iron'),
@@ -20,12 +17,10 @@ client.on('message', function (message) {
         const commandBody = message.content.slice(prefix.length)
         const args = commandBody.split(' ')
         const command = args.shift().toLowerCase()
-        if(commands[command])
-        commands[command](message)
+        if (commands[command]) commands[command](message)
     }
 })
-
-client.login(config.BOT_TOKEN)
+client.login(process.env.BOT_TOKEN)
 
 module.exports = {
     client,
