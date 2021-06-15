@@ -46,13 +46,28 @@ module.exports = async message => {
         return message.reply('Error parsing the threshold price. Please use numbers only')
     }
 
+    // check if it exists
+    const existing = await prisma.alert.findFirst({
+       where:{
+           price: parsedAmount,
+           discordUser: message.author.id,
+           coin: coin.toLowerCase(),
+           threshold,
+       }
+    })
+
+    if(existing) {
+        return message.reply('No. You have a similar alert in my records.')
+
+    }
+
     // all good, create alert
     try {
         await prisma.alert.create({
             data: {
                 price: parsedAmount,
                 discordUser: message.author.id,
-                coin,
+                coin: coin.toLowerCase(),
                 threshold,
                 notifications: [],
             },

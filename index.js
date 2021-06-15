@@ -1,15 +1,20 @@
 require('dotenv').config()
-
+const {provider} = require('./web3')
 // cron
-const fetchPrices = require('./cron/fetchPrices')
+const { worker,notifySubscribers } = require('./cron/fetchPrices')
 const cron = require('node-cron')
 
 cron.schedule('*/30 * * * * *', () => {
     console.log('fetching prices')
-    fetchPrices()
+    worker()
+
 })
 
+
+
+// donation
 const { client } = require('./common/discordClient')
+
 
 module.exports = {
     client,
