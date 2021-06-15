@@ -1,27 +1,17 @@
 require('dotenv').config()
 
-const Discord = require('discord.js')
-const prefix = '!'
-const commands = {
-    titan: require('./commands/titan'),
-    iron: require('./commands/iron'),
-    tcr: require('./commands/cr'),
-    ecr: require('./commands/cr'),
-}
-const client = new Discord.Client()
+// cron
+const fetchPrices = require('./cron/fetchPrices')
+const cron = require('node-cron')
 
-client.on('message', function (message) {
-    if (message.author.bot) return
-
-    if (message.cleanContent.startsWith(prefix)) {
-        const commandBody = message.content.slice(prefix.length)
-        const args = commandBody.split(' ')
-        const command = args.shift().toLowerCase()
-        if (commands[command]) commands[command](message)
-    }
+cron.schedule('*/30 * * * * *', () => {
+    console.log('fetching prices')
+    fetchPrices()
 })
-client.login(process.env.BOT_TOKEN)
+
+const { client } = require('./common/discordClient')
 
 module.exports = {
     client,
+    getClient: () => client,
 }
