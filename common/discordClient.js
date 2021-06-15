@@ -7,6 +7,7 @@ const commands = {
     tcr: require('../commands/cr'),
     ecr: require('../commands/cr'),
     alert: require('../commands/alert'),
+    alertstats: require('../commands/alertstats')
 }
 
 
