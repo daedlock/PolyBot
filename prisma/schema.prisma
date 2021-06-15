@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Alert {
+    id        Int      @default(autoincrement()) @id
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  coin String
+  price Decimal
+  threshold String
+  notifications Json
+  discordUser String
+}
+
+model PriceItem {
+    id        Int      @default(autoincrement()) @id
+    createdAt DateTime @default(now())
+    price Decimal
+    coin String
+}
