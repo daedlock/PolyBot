@@ -67,6 +67,9 @@ const notifySubscribers = async (coin, currentPrice, previousPrice) => {
                 title: `${event} `,
                 fields: [
                     {
+                        name: 'Coin',
+                        value: a.coin,
+                    }, {
                         name: 'Alert Threshold',
                         value: `Price ${a.threshold} $${a.price}`,
                     },

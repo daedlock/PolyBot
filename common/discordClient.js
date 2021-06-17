@@ -5,6 +5,8 @@ const commands = {
     matic: require('../commands/matic'),
     iron: require('../commands/iron'),
     wexpoly: require('../commands/wexpoly'),
+    wexp: require('../commands/wexpoly'),
+    wex: require('../commands/wexpoly'),
     qi: require('../commands/qi'),
     tcr: require('../commands/cr'),
     ecr: require('../commands/cr'),
