@@ -1,7 +1,5 @@
 const { supportedCoins } = require('../config')
 const helpMessage = `
-
-
 \`\`\`
 
      
