@@ -41,5 +41,6 @@ const helpMessage = `
 \`\`\`
 `
 module.exports = message => {
-    message.author.send(helpMessage)
+    message.author.reply(helpMessage)
+
 }
