@@ -1,11 +1,19 @@
-# PolyBot 
-Formely Titan Bot
+<p align="center">
+<p align="center"><img width=200 height=200 src="https://user-images.githubusercontent.com/842346/122435819-9cf1c100-cf98-11eb-882d-d5417df7862a.png"/></p>
+<h2 style="color:" align="center" border="0">PolyBot</h2>
 
 
-PolyBot is a project aimed to notify users based on alerts they setup for Polygon (MATIC) ERC20 Tokens. 
+</p>
 
 
-## Discord Bot
+
+  
+    
+      
+        
+        
+
+## Discord Bot. 
 
 ```
                                 ▓▓▓▓            
