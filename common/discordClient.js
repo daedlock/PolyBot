@@ -13,7 +13,7 @@ const commands = {
     alert: require('../commands/alert'),
     alertstats: require('../commands/alertstats'),
     help: require('../commands/help'),
-    supportedcoins: require('../commands/supportedcoins'),
+    supportedcoins: require('../commands/supportedCoins'),
 }
 
 const client = new Discord.Client()
