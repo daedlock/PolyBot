@@ -1,12 +1,11 @@
 require('dotenv').config()
 const {provider} = require('./web3')
 // cron
-const { worker,notifySubscribers } = require('./cron/fetchPrices')
+const { beat } = require('./cron/heartbeat')
 const cron = require('node-cron')
 
 cron.schedule('*/30 * * * * *', () => {
-    console.log('fetching prices')
-    worker()
+    beat()
 
 })
 

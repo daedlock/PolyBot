@@ -3,11 +3,17 @@ const Discord = require('discord.js')
 const prefix = '!'
 const commands = {
     titan: require('../commands/titan'),
+    matic: require('../commands/matic'),
     iron: require('../commands/iron'),
+    wexpoly: require('../commands/wexpoly'),
+    qi: require('../commands/qi'),
     tcr: require('../commands/cr'),
     ecr: require('../commands/cr'),
     alert: require('../commands/alert'),
-    alertstats: require('../commands/alertstats')
+    alertstats: require('../commands/alertstats'),
+    help: require('../commands/help'),
+    supportedcoins: require('../commands/supportedcoins')
+
 }
 
 

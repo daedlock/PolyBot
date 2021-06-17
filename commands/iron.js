@@ -1,7 +1,7 @@
-const { getIronPrice } = require('../lib/getPrice')
+const { getPrice } = require('../coins/Iron')
 
 module.exports = async message => {
-    const price = await getIronPrice()
+    const price = await getPrice()
     message.reply({
 
         embed: {

@@ -18,7 +18,7 @@ module.exports = async message => {
     }
     threshold = threshold.toLowerCase()
     // coin validation
-    if (!supportedCoins.includes(coin.toUpperCase())) {
+    if (!supportedCoins.map(c => c.toLowerCase()).includes(coin.toLowerCase())) {
         return message.reply(`Supported coins: ${supportedCoins.join(', ')}`)
     }
 
@@ -30,9 +30,9 @@ module.exports = async message => {
     }
 
     // value validation
-    let parsedAmount
+    let parsedAmount = amount.replace('$', '')
     try {
-        parsedAmount = parseFloat(amount)
+        parsedAmount = parseFloat(parsedAmount)
 
         if (amount === 0) {
             return message.reply("Amount can't be 0")
@@ -48,17 +48,16 @@ module.exports = async message => {
 
     // check if it exists
     const existing = await prisma.alert.findFirst({
-       where:{
-           price: parsedAmount,
-           discordUser: message.author.id,
-           coin: coin.toLowerCase(),
-           threshold,
-       }
+        where: {
+            price: parsedAmount,
+            discordUser: message.author.id,
+            coin: coin.toLowerCase(),
+            threshold,
+        },
     })
 
-    if(existing) {
+    if (existing) {
         return message.reply('No. You have a similar alert in my records.')
-
     }
 
     // all good, create alert
@@ -78,7 +77,9 @@ module.exports = async message => {
     }
 
     return message.reply(
-        `Created an alert for **${coin.toUpperCase()}** when price go *${thresholdOpsMap[threshold]}* **$${parsedAmount}**`,
+        `Created an alert for **${coin.toUpperCase()}** when price go *${
+            thresholdOpsMap[threshold]
+        }* **$${parsedAmount}**`,
     )
 
     await prisma.$disconnect()
