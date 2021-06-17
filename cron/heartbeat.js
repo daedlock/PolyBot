@@ -26,7 +26,7 @@ const notifyChannel = async (coin, currentPrice, latestPrice) => {
 }
 
 const notifySubscribers = async (coin, currentPrice, previousPrice) => {
-    console.log("notifiying subscribers:  " + coin)
+    console.log('notifiying subscribers:  ' + coin)
     const operator = currentPrice > previousPrice.price ? 'gt' : 'lt'
     const mathOps = { gt: '>', lt: '<' }
     const inverseMathOps = { gt: 'lte', lt: 'gte' }
@@ -49,7 +49,7 @@ const notifySubscribers = async (coin, currentPrice, previousPrice) => {
         },
     })
 
-    console.log("Found matching alerts: " + matchingAlerts.length)
+    console.log('Found matching alerts: ' + matchingAlerts.length)
 
     for (let a of matchingAlerts) {
         const user = await client.users.fetch(a.discordUser)
@@ -108,7 +108,7 @@ const beat = async () => {
                 },
             })
         } else if (previousPrice.price == currentPrice) {
-             console.log(`${coinName} price unchanged`)
+            console.log(`${coinName} price unchanged`)
             continue
         } else {
             await prisma.priceItem.create({

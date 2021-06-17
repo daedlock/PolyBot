@@ -1,4 +1,3 @@
-
 const Discord = require('discord.js')
 const prefix = '!'
 const commands = {
@@ -12,13 +11,10 @@ const commands = {
     alert: require('../commands/alert'),
     alertstats: require('../commands/alertstats'),
     help: require('../commands/help'),
-    supportedcoins: require('../commands/supportedcoins')
-
+    supportedcoins: require('../commands/supportedcoins'),
 }
 
-
 const client = new Discord.Client()
-
 
 client.on('message', function (message) {
     if (message.author.bot) return
@@ -30,10 +26,8 @@ client.on('message', function (message) {
     }
 })
 
-
 client.login(process.env.BOT_TOKEN)
 
-
 module.exports = {
-    client
+    client,
 }

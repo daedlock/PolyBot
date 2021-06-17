@@ -6,10 +6,15 @@ module.exports = async message => {
     message.reply({
         embed: {
             title: 'MATIC',
-            thumbnail: { url: 'https://www.everythingcryptopro.com/api/blog/photo/what-is-matic-network-and-matic-coin-or-easy-explanation' },
-            fields:[{
-                name: "Price",
-                value: `**$${price}**`
-            }]        },
+            thumbnail: {
+                url: 'https://www.everythingcryptopro.com/api/blog/photo/what-is-matic-network-and-matic-coin-or-easy-explanation',
+            },
+            fields: [
+                {
+                    name: 'Price',
+                    value: `**$${price}**`,
+                },
+            ],
+        },
     })
 }

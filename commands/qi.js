@@ -6,10 +6,15 @@ module.exports = async message => {
     message.reply({
         embed: {
             title: 'Qi',
-            thumbnail: { url: 'https://raw.githubusercontent.com/0xlaozi/qidao/main/images/qi.png' },
-            fields:[{
-                name: "Price",
-                value: `**$${price}**`
-            }]        },
+            thumbnail: {
+                url: 'https://raw.githubusercontent.com/0xlaozi/qidao/main/images/qi.png',
+            },
+            fields: [
+                {
+                    name: 'Price',
+                    value: `**$${price}**`,
+                },
+            ],
+        },
     })
 }

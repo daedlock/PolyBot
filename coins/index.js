@@ -8,5 +8,5 @@ module.exports = {
     Iron,
     Qi,
     Matic,
-    WexPoly
+    WexPoly,
 }
