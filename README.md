@@ -1,5 +1,11 @@
-# TitanBot
-Discord bot to fetch titan, iron prices and collateral ratios
+# PolyBot 
+Formely Titan Bot
+
+
+PolyBot is a project aimed to notify users based on alerts they setup for Polygon (MATIC) ERC20 Tokens. 
+
+
+## Discord Bot
 
 ```
                                 ▓▓▓▓            
@@ -33,7 +39,13 @@ Discord bot to fetch titan, iron prices and collateral ratios
     !alertstats         prints information about saved alerts
     !supportedcoins     a list of the supported coins
     !help               print this message
-    ```
+    
+```
     
     
-    Design
+## DAPP (TODO)
+![search](https://user-images.githubusercontent.com/842346/122434888-cb22d100-cf97-11eb-86a5-7d862166b923.jpg)
+
+![alert](https://user-images.githubusercontent.com/842346/122434879-c8c07700-cf97-11eb-81dd-b560eb0c15b0.jpg)
+
+    
