@@ -1,8 +1,9 @@
 const supportedCoins = [
     "Matic",
-    "IRON",
     "Qi",
     "WexPoly",
+    "Addy",
+    "Eth"
 ]
 
 const addresses = {
