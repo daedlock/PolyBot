@@ -8,8 +8,6 @@ const commands = {
     addy: require('../commands/addy'),
     wex: require('../commands/wexpoly'),
     qi: require('../commands/qi'),
-    tcr: require('../commands/cr'),
-    ecr: require('../commands/cr'),
     alert: require('../commands/alert'),
     alertstats: require('../commands/alertstats'),
     help: require('../commands/help'),
