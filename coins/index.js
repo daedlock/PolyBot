@@ -4,6 +4,8 @@ const WexPoly = require('./WexPoly')
 const Addy = require('./Addy')
 const Eth = require('./Eth')
 const Pup = require('./Pup')
+const Bone = require('./Bone')
+
 
 //exported coins are automatically fetched by the worker each 30s.
 
@@ -13,5 +15,6 @@ module.exports = {
     Addy,
     Matic,
     Pup,
-    Eth
+    Eth,
+    Bone
 }

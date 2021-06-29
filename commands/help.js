@@ -29,6 +29,8 @@ const helpMessage = `
     !wexp               fetch WexPoly price from pair reserve pool (realtime)
     !wexpoly            fetch WexPoly price from pair reserve pool (realtime)
     !addy               fetch ADDY price from pair reserve pool (realtime)
+    !pup                fetch PUP price from pair reserve pool (realtime)
+    !bone               fetch BONE price from pair reserve pool (realtime)
     !ecr                fetch collateral ratio (ECR & TCR)
     !alert              alert when a coin price goes off the threshold
     !alertstats         prints information about saved alerts

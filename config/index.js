@@ -4,6 +4,7 @@ const supportedCoins = [
     "WexPoly",
     "Addy",
     "Pup",
+    "Bone",
     "Eth"
 ]
 
