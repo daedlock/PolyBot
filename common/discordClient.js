@@ -7,6 +7,7 @@ const commands = {
     wexp: require('../commands/wexpoly'),
     addy: require('../commands/addy'),
     pup: require('../commands/pup'),
+    bone: require('../commands/bone'),
     wex: require('../commands/wexpoly'),
     qi: require('../commands/qi'),
     alert: require('../commands/alert'),
