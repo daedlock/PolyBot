@@ -5,6 +5,7 @@ const Addy = require('./Addy')
 const Eth = require('./Eth')
 const Pup = require('./Pup')
 const Bone = require('./Bone')
+const Titan = require('./Titan')
 
 
 //exported coins are automatically fetched by the worker each 30s.
@@ -16,5 +17,6 @@ module.exports = {
     Matic,
     Pup,
     Eth,
-    Bone
+    Bone,
+    Titan
 }
