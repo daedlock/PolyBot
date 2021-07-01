@@ -6,6 +6,7 @@ const supportedCoins = [
     "Pup",
     "Bone",
     "Eth",
+    "Bunny",
     "Titan"
 ]
 
