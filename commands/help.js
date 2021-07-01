@@ -22,6 +22,8 @@ const helpMessage = `
                                                                                        
     Available Commands: 
     
+    Tokens:
+    ------------------------------------------------------------------------------
     !eth                fetch ETH price from pair reserve pool (realtime)
     !matic              fetch MATIC price from pair reserve pool (realtime)
     !qi                 fetch Qi price from pair reserve pool (realtime)
@@ -38,6 +40,10 @@ const helpMessage = `
     !alertstats         prints information about saved alerts
     !supportedcoins     a list of the supported coins
     !help               print this message
+    
+    Misc:
+    -------------------------------------------------------------------------------
+    !info <address> prints details for erc 20 tokens
     
     
 \`\`\`
