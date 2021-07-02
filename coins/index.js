@@ -6,6 +6,7 @@ const Eth = require('./Eth')
 const Pup = require('./Pup')
 const Bone = require('./Bone')
 const Titan = require('./Titan')
+const PSpace = require('./PSpace')
 const Bunny = require('./Bunny')
 
 
@@ -20,5 +21,6 @@ module.exports = {
     // Eth,
     Bone,
     Titan,
-    Bunny
+    Bunny,
+    PSpace
 }
