@@ -38,6 +38,7 @@ PolyBot on PolyWatch discord server.
     !alertstats         prints information about saved alerts
     !supportedcoins     a list of the supported coins
     !help               print this message
+    !gecko <coin>       print information about the coin from Coingecko
     
 ```
     

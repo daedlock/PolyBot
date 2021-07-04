@@ -18,6 +18,7 @@ const commands = {
     help: require('../commands/help'),
     supportedcoins: require('../commands/supportedCoins'),
     info: require('../commands/info'),
+    gecko: require('../commands/gecko'),
 }
 
 const client = new Discord.Client()
