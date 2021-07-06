@@ -5,7 +5,7 @@ module.exports = async message => {
     const price = await getPrice()
     message.reply({
         embed: {
-            title: 'MATIC',
+            title: 'DOJO',
             thumbnail: {
                 url: 'https://polygon.dojofarm.finance/images/dojo/9.png',
             },
