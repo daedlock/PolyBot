@@ -17,6 +17,7 @@ const commands = {
     alertstats: require('../commands/alertstats'),
     help: require('../commands/help'),
     supportedcoins: require('../commands/supportedCoins'),
+    dojo: require('../commands/dojo'),
     info: require('../commands/info'),
 }
 
