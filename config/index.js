@@ -8,7 +8,8 @@ const supportedCoins = [
     "Eth",
     "Bunny",
     "pSpace",
-    "Dojo"
+    "Dojo",
+    "pWING"
 ]
 
 const addresses = {

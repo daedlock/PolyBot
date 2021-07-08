@@ -9,6 +9,7 @@ const Titan = require('./Titan')
 const PSpace = require('./PSpace')
 const Bunny = require('./Bunny')
 const Dojo = require('./Dojo')
+const Pwing = require('./Pwing')
 
 
 //exported coins are automatically fetched by the worker each 30s.
@@ -19,8 +20,9 @@ module.exports = {
     // Addy,
     // Matic,
     // Eth,
-    Titan,
-    Bunny,
-    PSpace,
-    Dojo
+    // Titan,
+    // Bunny,
+    // PSpace,
+    // Dojo,
+    Pwing
 }

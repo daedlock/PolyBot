@@ -18,6 +18,7 @@ const commands = {
     help: require('../commands/help'),
     supportedcoins: require('../commands/supportedCoins'),
     dojo: require('../commands/dojo'),
+    pwing: require('../commands/pwing'),
     info: require('../commands/info'),
     gecko: require('../commands/gecko'),
 }
