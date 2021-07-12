@@ -25,5 +25,6 @@ module.exports = {
     // Bunny,
     // PSpace,
     // Dojo,
+    Pwing,
     Ice
 }
