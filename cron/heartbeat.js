@@ -16,12 +16,14 @@ const notifyChannel = async (coin, currentPrice, latestPrice) => {
             dir = '↑'
             event = '🟢'
         }
-        const notfDiscordChannel = client.channels.cache.find(
+        client.channels.cache.filter(
             c => c.name === process.env.NOTIFICATIONS_CHANNEL,
-        )
-        notfDiscordChannel.send(
-            `> ${event} **${coin.toUpperCase()}:** $${currentPrice} ( **${dir}** ${ratio}%)`,
-        )
+        ).forEach(c => {
+            c.send(
+                `> ${event} **${coin.toUpperCase()}:** $${currentPrice} ( **${dir}** ${ratio}%)`,
+            )
+        })
+
     }
 }
 
