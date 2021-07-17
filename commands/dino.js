@@ -1,4 +1,4 @@
-const { getPrice } = require('../coins/DINO')
+const { getPrice } = require('../coins/Dino')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = async message => {
