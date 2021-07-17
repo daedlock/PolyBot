@@ -11,6 +11,7 @@ const Bunny = require('./Bunny')
 const Dojo = require('./Dojo')
 const Pwing = require('./Pwing')
 const Ice = require('./Ice')
+const Dino = require('./Dino')
 
 
 //exported coins are automatically fetched by the worker each 30s.
