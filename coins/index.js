@@ -10,7 +10,7 @@ const PSpace = require('./PSpace')
 const Bunny = require('./Bunny')
 const Dojo = require('./Dojo')
 const Pwing = require('./Pwing')
-const Ice = require('./Ice')
+const Dolph = require('./Dolph')
 
 
 //exported coins are automatically fetched by the worker each 30s.
@@ -26,5 +26,5 @@ module.exports = {
     // PSpace,
     // Dojo,
     Pwing,
-    Ice
+    Dolph
 }

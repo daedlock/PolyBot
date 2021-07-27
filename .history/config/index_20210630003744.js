@@ -5,13 +5,7 @@ const supportedCoins = [
     "Addy",
     "Pup",
     "Bone",
-    "Eth",
-    "Bunny",
-    "pSpace",
-    "Dojo",
-    "pWING",
-    "ICE",
-    "DOLPH"
+    "Eth"
 ]
 
 const addresses = {
