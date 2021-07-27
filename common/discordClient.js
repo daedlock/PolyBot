@@ -7,6 +7,7 @@ const commands = {
     titan: require('../commands/titan'),
     wexp: require('../commands/wexpoly'),
     bunny: require('../commands/bunny'),
+    dino: require('../commands/dino'),
     addy: require('../commands/addy'),
     pspace: require('../commands/pspace'),
     pup: require('../commands/pup'),
