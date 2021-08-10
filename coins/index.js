@@ -11,6 +11,8 @@ const Bunny = require('./Bunny')
 const Dojo = require('./Dojo')
 const Pwing = require('./Pwing')
 const Dolph = require('./Dolph')
+const Dino = require('./Dino')
+const Raider = require('./Raider')
 
 
 //exported coins are automatically fetched by the worker each 30s.
@@ -25,6 +27,8 @@ module.exports = {
     // Bunny,
     // PSpace,
     // Dojo,
-    Pwing,
-    Dolph
+//    Pwing,
+//    Dolph,
+//    Dino,
+//    Raider
 }
