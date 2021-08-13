@@ -24,6 +24,7 @@ const commands = {
     pwing: require('../commands/pwing'),
     info: require('../commands/info'),
     gecko: require('../commands/gecko'),
+    raider: require('../commands/raider'),
 }
 
 const client = new Discord.Client()

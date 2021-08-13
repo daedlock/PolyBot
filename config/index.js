@@ -12,7 +12,8 @@ const supportedCoins = [
     "pWING",
     "DOLPH",
     "ICE",
-    "DINO"
+    "DINO",
+    "RAIDER"
 ]
 
 const addresses = {
