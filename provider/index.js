@@ -1,4 +1,6 @@
 const { ethers } = require('ethers')
-const provider = new ethers.providers.JsonRpcProvider(process.env.INFURA_RPC)
+const matic = new ethers.providers.JsonRpcProvider(process.env.MATIC_RPC)
 
-module.exports = provider
+module.exports = {
+    matic,
+}

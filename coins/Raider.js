@@ -7,7 +7,7 @@ const Matic = require('./Matic')
 const RAIDER_MATIC_PAIR = '0x2E7d6490526C7d7e2FDEa5c6Ec4b0d1b9F8b25B7'
 
 async function getPrice() {
-    const raiderMaticPair = new ethers.Contract(RAIDER_MATIC_PAIR, PairABI, provider)
+    const raiderMaticPair = new ethers.Contract(RAIDER_MATIC_PAIR, PairABI, provider.matic)
     const maticPrice = await Matic.getPrice()
     const [reserve0, reserve1] = await raiderMaticPair.getReserves()
     return (reserve0 * maticPrice) / reserve1
@@ -15,7 +15,7 @@ async function getPrice() {
 
 
 async function subscribePair() {
-   const RaiderMaticPair = new ethers.Contract(RAIDER_MATIC_PAIR, PairABI, provider)
+   const RaiderMaticPair = new ethers.Contract(RAIDER_MATIC_PAIR, PairABI, provider.matic)
    RaiderMaticPair.on('Sync', async (reserve0, reserve1) => {
     const maticPrice = await Matic.getPrice()
     const raiderPrice = (reserve0 * maticPrice) / reserve1
