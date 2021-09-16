@@ -8,21 +8,21 @@ const PUP_USDC_PAIR = '0x767f8BD67a5f133BdDF3b285c5E2FD3D157A2cdC'
 const PUP_MATIC_PAIR = '0xBC68d2A5920c4ffaEa20E2BE48a0E09055481976'
 async function getPrice() {
     //usdc
-    const PupUsdcPair = new ethers.Contract(PUP_USDC_PAIR, PairABI, provider)
+    const PupUsdcPair = new ethers.Contract(PUP_USDC_PAIR, PairABI, provider.matic)
     const [reserve0, reserve1] = await PupUsdcPair.getReserves()
     return (reserve0 * 1e12) / reserve1
 }
 
 async function getPrice2() {
     //matic
-    const PupMaticPair = new ethers.Contract(PUP_MATIC_PAIR, PairABI, provider)
+    const PupMaticPair = new ethers.Contract(PUP_MATIC_PAIR, PairABI, provider.matic)
     const maticPrice = await Matic.getPrice()
     const [reserve0, reserve1] = await PupMaticPair.getReserves()
     return (reserve0 / reserve1) * maticPrice
 }
 
 async function subscribePair() {
-    const PupMaticPair = new ethers.Contract(PUP_MATIC_PAIR, PairABI, provider)
+    const PupMaticPair = new ethers.Contract(PUP_MATIC_PAIR, PairABI, provider.matic)
     PupMaticPair.on('Sync', async (reserve0, reserve1) => {
         const maticPrice = await Matic.getPrice()
         console.log('Pup: ' + (reserve0 / reserve1) * maticPrice)

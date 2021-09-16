@@ -7,14 +7,14 @@ const DOLPH_USDC_PAIR = '0x7a9A82fbB67262064C442652099936815eD2f78C'
 
 async function getPrice() {
     //usdc
-    const DolphUsdcPair = new ethers.Contract(DOLPH_USDC_PAIR, PairABI, provider)
+    const DolphUsdcPair = new ethers.Contract(DOLPH_USDC_PAIR, PairABI, provider.matic)
     const [reserve0, reserve1] = await DolphUsdcPair.getReserves()
     return (reserve0 * 1e12) / reserve1
 }
 
 
 async function subscribePair() {
-    const PupMaticPair = new ethers.Contract(DOLPH_USDC_PAIR, PairABI, provider)
+    const PupMaticPair = new ethers.Contract(DOLPH_USDC_PAIR, PairABI, provider.matic)
     PupMaticPair.on('Sync', async (reserve0, reserve1) => {
         const maticPrice = await Matic.getPrice()
         console.log('DOLPH: ' +  (reserve0 * 1e12) / reserve1)

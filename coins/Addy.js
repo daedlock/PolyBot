@@ -6,7 +6,7 @@ const Eth = require('./Eth')
 const ADDY_ETH_PAIR = '0xa5BF14BB945297447fE96f6cD1b31b40d31175CB'
 
 async function getPrice() {
-    const AddyWethPair = new ethers.Contract(ADDY_ETH_PAIR, PairABI, provider)
+    const AddyWethPair = new ethers.Contract(ADDY_ETH_PAIR, PairABI, provider.matic)
     const [reserve0, reserve1] = await AddyWethPair.getReserves()
     const EthPrice = await Eth.getPrice()
     return reserve0 / reserve1  * EthPrice
