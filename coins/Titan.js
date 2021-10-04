@@ -7,14 +7,14 @@ const TITAN_USDC_PAIR = '0x8af511761c74af631258d8ee6096679ff4838cde'
 
 async function getPrice() {
     //usdc
-    const TitanUsdcPair = new ethers.Contract(TITAN_USDC_PAIR, PairABI, provider)
+    const TitanUsdcPair = new ethers.Contract(TITAN_USDC_PAIR, PairABI, provider.matic)
     const [reserve0, reserve1] = await TitanUsdcPair.getReserves()
     return ((reserve0 * 1e12) / reserve1)
 }
 
 async function subscribePair() {
     const titanBalance = 77905660.795959579203091711
-    const PupMaticPair = new ethers.Contract(TITAN_USDC_PAIR, PairABI, provider)
+    const PupMaticPair = new ethers.Contract(TITAN_USDC_PAIR, PairABI, provider.matic)
     PupMaticPair.on('Sync', async (reserve0, reserve1) => {
         console.log('TITAN: ' + ((reserve0 * 1e12) / reserve1) * titanBalance)
     })
