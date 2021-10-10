@@ -28,6 +28,7 @@ const commands = {
     movr: require('../commands/movr'),
     ivory: require('../commands/ivory'),
     tx: require('../commands/tx'),
+    ftm: require('../commands/ftm'),
 }
 
 const client = new Discord.Client()
