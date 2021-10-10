@@ -26,6 +26,8 @@ const commands = {
     gecko: require('../commands/gecko'),
     raider: require('../commands/raider'),
     movr: require('../commands/movr'),
+    ivory: require('../commands/ivory'),
+    tx: require('../commands/tx'),
 }
 
 const client = new Discord.Client()
