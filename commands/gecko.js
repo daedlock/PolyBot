@@ -1,9 +1,9 @@
-//TODO: Fetch from api and seed db via cron
-const coingeckoCoins = require('../coingecko/coingecko.json')
 const CoinGecko = require('coingecko-api')
 const CoinGeckoClient = new CoinGecko()
 const parseDiscordMessageParams = require('./utils/parseDiscordMessageParams')
 const formatPercentage = require('./utils/formatPercentage')
+
+IsAwake = false
 
 module.exports = async message => {
     let [coin] = parseDiscordMessageParams(message.cleanContent)
@@ -13,11 +13,33 @@ module.exports = async message => {
 
     coin = coin.toLowerCase()
 
-    const listedCoin = coingeckoCoins.find(
+    if(!IsAwake){
+    // Fetch coin list if this is the first time the !gecko command has been invoked
+        CoinGeckoList = await CoinGeckoClient.coins.list();
+        console.info("Initialized CoinList")
+        // Set flag to indicate that the !gecko command has been invoked once        
+        IsAwake = true
+    }
+    
+    listedCoin = CoinGeckoList.data.find(
         each => each.symbol === coin || each.id === coin || each.name === coin,
     )
+    
     if (!listedCoin) {
-        return message.reply("The Coin isn't listed on Coingecko")
+        
+        console.info("Coin Not found Refreshing CoinList")
+
+        // If the coin isn't found, refresh the database first, and look again otherwise, return an error
+        CoinGeckoList = await CoinGeckoClient.coins.list();
+        
+        listedCoin = CoinGeckoList.data.find(
+            each => each.symbol === coin || each.id === coin || each.name === coin,
+        )
+
+        if (!listedCoin) {
+            console.info("Coin not found after CoinList refresh")
+            return message.reply("The Coin isn't listed on Coingecko")
+        }
     }
 
     const { data } = await await CoinGeckoClient.coins.fetch(listedCoin.id, {
@@ -124,3 +146,20 @@ module.exports = async message => {
         },
     })
 }
+// var fs = require('fs');
+
+// if(!IsAwake){
+//     // Fetch coin list if this is the first time the !gecko command has been invoked
+//         CoinData = await CoinGeckoClient.coins.list();
+        
+//         // fs.writeFile("/tmp/coingecko.json", CoinData.data, function(err) {
+//         //     if(err) {
+//         //         console.log(err);
+//         //     } else {
+//         //         console.log("The file /tmp/coingecko.json was saved!");                
+//         //     }
+//         // })        
+        
+//         // Set flag to indicate that the !gecko command has been invoked once        
+//         IsAwake = true
+//     }
