@@ -14,6 +14,7 @@ const Dolph = require('./Dolph')
 const Dino = require('./Dino')
 const Raider = require('./Raider')
 const Movr = require('./Movr')
+const Ftm = require('./Ftm')
 
 
 //exported coins are automatically fetched by the worker each 30s.
