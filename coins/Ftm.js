@@ -1,14 +1,14 @@
 const provider = require('../provider')
 const { ethers } = require('ethers')
-const ChainLinkABI = require('../abis/ChainLink.abi.json')
+const PairABI = require('../abis/Pair.abi.json')
 
-const FTM_USDC_ORACLE = `0xf4766552d15ae4d256ad41b6cf2933482b0680dc`
-
+// SpookySwap Liquidity Pool
+const FTM_USDC_LP = `0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c`
 
 async function getPrice() {
-    const FtmUsdcPair = new ethers.Contract(FTM_USDC_ORACLE, ChainLinkABI, provider.ftm)
-    price = await FtmUsdcPair.latestAnswer()
-    return price / 1e8
+    const FtmUsdcPair = new ethers.Contract(FTM_USDC_LP, PairABI, provider.ftm)
+    [reserve0, reserve1] = await FtmUsdcPair.getReserves()
+    return (reserve0 * 1e12) / reserve1
 }
 
 
@@ -18,24 +18,9 @@ const Ftm = {
 
 module.exports = Ftm
 
-
-
-// var Web3 = require('web3');
-// let w3 = new Web3(new Web3.providers.HttpProvider(process.env.FTM_RPC));
-
-// let oracle = new w3.eth.Contract(CHAINLINK_ORACLE_ABI, ORACLE_ADDRESS);
-
-// oracle.methods.latestAnswer().call({}, function(error, res) {
-//     if (error != null) {
-//         console.log(error)
-//         return;
-//     }
-//     console.log("Latest price was:" ,res)
-// }
-// oracle.methods.latestTimestamp().call({}, function(error, res) {
-//     if (error != null) {
-//         console.log(error)
-//         return;
-//     }
-//     console.log("Latest timestamp for price was:" ,res)
-// });
+/* Compute Price Using ChainLink Price Feed (FTM) 
+const ChainLinkABI = require('../abis/ChainLink.abi.json')
+const FTM_USDC_CHAINLINK_PRICE_FEED = `0xf4766552d15ae4d256ad41b6cf2933482b0680dc`
+price = await FtmUsdcPair.latestAnswer()
+return price / 1e8
+*/
