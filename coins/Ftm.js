@@ -7,7 +7,7 @@ const FTM_USDC_LP = `0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c`
 
 async function getPrice() {
     const FtmUsdcPair = new ethers.Contract(FTM_USDC_LP, PairABI, provider.ftm)
-    [reserve0, reserve1] = await FtmUsdcPair.getReserves()
+    const [reserve0, reserve1] = await FtmUsdcPair.getReserves()
     return (reserve0 * 1e12) / reserve1
 }
 
