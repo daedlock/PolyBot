@@ -29,6 +29,8 @@ const commands = {
     ivory: require('../commands/ivory'),
     tx: require('../commands/tx'),
     ftm: require('../commands/ftm'),
+    repl: require('../commands/repl'),
+    block: require('../commands/block')
 }
 
 const client = new Discord.Client()
