@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer')
 const cheerio = require('cheerio')
 
 const getFutureBlockTime = async (blockNumber) => {
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({args: ['--no-sandbox']});
         const page = await browser.newPage();
         await page.goto(`https://polygonscan.com/block/countdown/${blockNumber}`);
         await page.waitFor('.js-cd-days')
