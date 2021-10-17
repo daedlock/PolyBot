@@ -32,6 +32,13 @@ const commands = {
     repl: require('../commands/repl'),
     block: require('../commands/block'),
     tower: require('../commands/tower'),
+    bnb: require('../commands/bnb'),
+    // monsta: require('../commands/monsta'),
+    // oasis: require('../commands/oasis'),
+    // gyro: require('../commands/gyro'),
+    // aklima: require('../commands/aklima'),
+    // klima: require('../commands/klima'),
+    // bcs: require('../commands/bct'),
 }
 
 const client = new Discord.Client()
