@@ -2,7 +2,7 @@ const provider = require('../provider')
 const { ethers } = require('ethers')
 const PairABI = require('../abis/Pair.abi.json')
 
-//pancakeswap
+// PancakeSwap
 const BNB_BUSD_PAIR = '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16'
 
 async function getPrice() {

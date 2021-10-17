@@ -33,6 +33,7 @@ const commands = {
     block: require('../commands/block'),
     tower: require('../commands/tower'),
     bnb: require('../commands/bnb'),
+    cake: require('../commands/cake'),
     // monsta: require('../commands/monsta'),
     // oasis: require('../commands/oasis'),
     // gyro: require('../commands/gyro'),
