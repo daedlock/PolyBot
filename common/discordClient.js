@@ -35,11 +35,7 @@ const commands = {
     bnb: require('../commands/bnb'),
     cake: require('../commands/cake'),
     monsta: require('../commands/monsta'),
-    // oasis: require('../commands/oasis'),
-    // gyro: require('../commands/gyro'),
-    // aklima: require('../commands/aklima'),
-    // klima: require('../commands/klima'),
-    // bcs: require('../commands/bct'),
+    gyro: require('../commands/gyro'),
 }
 
 const client = new Discord.Client()
