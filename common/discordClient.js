@@ -36,6 +36,7 @@ const commands = {
     cake: require('../commands/cake'),
     monsta: require('../commands/monsta'),
     gyro: require('../commands/gyro'),
+    oasis: require('../commands/oasis'),
 }
 
 const client = new Discord.Client()
