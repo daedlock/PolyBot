@@ -10,7 +10,7 @@ async function getPrice() {
     const BctKlimaPair = new ethers.Contract(BCT_KLIMA, PairABI, provider.matic)
     const [BctAmount, KlimaAmount] = await BctKlimaPair.getReserves()
     const BctPrice = await Bct.getPrice()
-    return BctPrice * (BctAmount * 1e12) / KlimaAmount 
+    return BctPrice * (BctAmount ) / KlimaAmount /1e9
 }
 
 
