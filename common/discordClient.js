@@ -38,6 +38,7 @@ const commands = {
     gyro: require('../commands/gyro'),
     oasis: require('../commands/oasis'),
     aurum: require('../commands/aurum'),
+    avax: require('../commands/avax'),
 }
 
 const client = new Discord.Client()

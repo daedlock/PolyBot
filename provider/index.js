@@ -3,6 +3,9 @@ const { ethers } = require('ethers')
 
 // RPCs for different chains
 
+// Avalanche Mainnet (AVAX)
+const avax = new ethers.providers.JsonRpcProvider(process.env.AVAX_RPC)
+
 // Binance Mainnet (BSC)
 const bsc = new ethers.providers.JsonRpcProvider(process.env.BSC_RPC)
 
@@ -19,6 +22,7 @@ const movr = new ethers.providers.JsonRpcProvider(process.env.MOVR_RPC)
 const matic = new ethers.providers.JsonRpcProvider(process.env.MATIC_RPC)
 
 module.exports = {
+    avax,
     bsc,
     eth,
     ftm,
