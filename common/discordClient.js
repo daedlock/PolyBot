@@ -40,6 +40,8 @@ const commands = {
     aurum: require('../commands/aurum'),
     avax: require('../commands/avax'),
     time: require('../commands/time'),
+    klima: require('../commands/klima'),
+    bct: require('../commands/bct'),
 }
 
 const client = new Discord.Client()
@@ -58,4 +60,5 @@ client.login(process.env.BOT_TOKEN)
 
 module.exports = {
     client,
+    commands,
 }
