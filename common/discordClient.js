@@ -30,7 +30,18 @@ const commands = {
     tx: require('../commands/tx'),
     ftm: require('../commands/ftm'),
     repl: require('../commands/repl'),
-    block: require('../commands/block')
+    block: require('../commands/block'),
+    tower: require('../commands/tower'),
+    bnb: require('../commands/bnb'),
+    cake: require('../commands/cake'),
+    monsta: require('../commands/monsta'),
+    gyro: require('../commands/gyro'),
+    oasis: require('../commands/oasis'),
+    aurum: require('../commands/aurum'),
+    avax: require('../commands/avax'),
+    time: require('../commands/time'),
+    klima: require('../commands/klima'),
+    bct: require('../commands/bct'),
 }
 
 const client = new Discord.Client()
@@ -49,4 +60,5 @@ client.login(process.env.BOT_TOKEN)
 
 module.exports = {
     client,
+    commands,
 }
