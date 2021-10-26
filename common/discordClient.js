@@ -42,6 +42,7 @@ const commands = {
     time: require('../commands/time'),
     klima: require('../commands/klima'),
     bct: require('../commands/bct'),
+    beans: require('../commands/beans'),
 }
 
 const client = new Discord.Client()
