@@ -1,4 +1,4 @@
-const { getPrice } = require('../coins/Bct')
+    const { getPrice } = require('../coins/Bct')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = async message => {
@@ -6,7 +6,7 @@ module.exports = async message => {
     message.reply({
         embed: {
             title: ' Toucan Protocol: Base Carbon Tonne (BCT)',
-            thumbnail: { url: 'https://pbs.twimg.com/profile_images/1441433238350675973/CL0pu_91_400x400.jpg'},
+            thumbnail: { url: 'https://assets.coingecko.com/coins/images/19240/large/Logo_BCT.png'},
             fields:[{
                 name: "Price",
                 value: `**$${price}**`
