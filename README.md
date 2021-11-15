@@ -43,9 +43,15 @@ PolyBot on PolyWatch discord server.
 ```
     
     
-## DAPP (TODO)
-![search](https://user-images.githubusercontent.com/842346/122434888-cb22d100-cf97-11eb-86a5-7d862166b923.jpg)
+## Requesting a ticker
+You can request support for a new token by creating an Issue in the following format:
 
-![alert](https://user-images.githubusercontent.com/842346/122434879-c8c07700-cf97-11eb-81dd-b560eb0c15b0.jpg)
 
-    
+> ## Chain/Network  
+> (Polygon | Mainnet | Avalanche | Harmony | Fantom..etc)  
+> ## Contract Address:  
+> 0x....  
+> ## AMM
+> (Sushiswap | DefiKingdoms | Uniswap..etc)
+
+  
