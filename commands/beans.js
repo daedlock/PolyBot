@@ -1,12 +1,12 @@
-    const { getPrice } = require('../coins/Bct')
+const { getPrice } = require('../coins/Beans')
 const { MessageEmbed } = require('discord.js')
 
 module.exports = async message => {
     const price = await getPrice()
     message.reply({
         embed: {
-            title: ' Toucan Protocol: Base Carbon Tonne (BCT)',
-            thumbnail: { url: 'https://assets.coingecko.com/coins/images/19240/large/Logo_BCT.png'},
+            title: 'Moonbeans [BEANS]',
+            thumbnail: { url: 'https://assets.coingecko.com/coins/images/18547/small/logo_-_2021-09-23T100943.437.png?1632362992'},
             fields:[{
                 name: "Price",
                 value: `**$${price}**`
