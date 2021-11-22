@@ -50,9 +50,9 @@ async function Msg(message, FullList) {
                 embed: {
                     color: 0x0099ff,
                     title: listedCoin.name.toUpperCase(),
-                    url: `https://www.coingecko.com/en/coins/` + listedCoin.id,
+                    url: data.links.homepage[0],
                     thumbnail: { url: data.image.large },
-                    fields: [{ name: `**$${data.market_data.current_price.usd}**`, value: 'Powered by Coingecko', inline: true }],
+                    fields: [{ name: `**$${data.market_data.current_price.usd}**`, value: 'Powered by [Coingecko](https://www.coingecko.com/en/coins/' + listedCoin.id + ')', inline: true }],
                 },
             }
 
@@ -152,10 +152,10 @@ async function Msg(message, FullList) {
 }
 
 module.exports = {
-    Gecko: async message => {
+    Gecko: async (message) => {
         Msg(message, false)
     },
-    GeckoFull: async message => {
+    GeckoFull: async (message) => {
         Msg(message, true)
     },
 }
