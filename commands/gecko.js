@@ -65,7 +65,9 @@ async function Msg(message, FullList) {
             }
             if (platformList.length) {
                 platforms.value = platformList.map(
-                    each => `**${each}** - ${data.platforms[each]}\n`,
+                    function (each) {
+                        return `**${each}**: ${data.platforms[each]}\n`
+                    },
                 )
             }
 
@@ -77,12 +79,12 @@ async function Msg(message, FullList) {
                 },
                 {
                     name: 'Market Cap',
-                    value: `**$${data.market_data.market_cap.usd}**`,
+                    value: `\$${(data.market_data.market_cap.usd).toLocaleString('en-US')}`,
                     inline: true,
                 },
                 {
                     name: 'Total Volume',
-                    value: `**$${data.market_data.total_volume.usd}**`,
+                    value: `\$${data.market_data.total_volume.usd.toLocaleString('en-US')}`,
                     inline: true,
                 },
                 {
@@ -91,47 +93,29 @@ async function Msg(message, FullList) {
                     inline: false,
                 },
                 {
-                    name: 'All Time High',
-                    value: `$${data.market_data.ath.usd}   ( **${formatPercentage(
-                        data.market_data.ath_change_percentage.usd,
-                    )}** )`,
+                    name: 'All-Time High',
+                    value: `$${data.market_data.ath.usd}   (${formatPercentage(
+                        Number(data.market_data.ath_change_percentage.usd).toFixed(2))})`,
                     inline: true,
                 },
                 {
-                    name: 'All Time Low',
-                    value: `$${data.market_data.atl.usd}   ( **${formatPercentage(
-                        data.market_data.atl_change_percentage.usd,
-                    )}** )`,
+                    name: 'All-Time Low',
+                    value: data.market_data.atl.usd + '\s (' + formatPercentage(
+                        Number(data.market_data.atl_change_percentage.usd).toFixed(2))
+                        + ')',
                     inline: true,
                 },
                 {
-                    name: '% Change 1h / 24h / 7days',
-                    value: `${formatPercentage(
-                        data.market_data.price_change_percentage_1h_in_currency.usd,
-                    )} / ${formatPercentage(
-                        data.market_data.price_change_percentage_24h_in_currency.usd,
-                    )} / ${formatPercentage(
-                        data.market_data.price_change_percentage_7d_in_currency.usd,
-                    )}`,
-                },
-                {
-                    name: '\u200b',
-                    value: '\u200b',
-                    inline: false,
-                },
-                {
-                    name: 'Home Page',
-                    value: data.links.homepage[0],
-                },
-                {
-                    name: '\u200b',
-                    value: '\u200b',
-                    inline: false,
+                    name: '% Chng 1h | 24h | 7d',
+                    value: Number(data.market_data.price_change_percentage_1h_in_currency.usd).toFixed(2) + ' | ' 
+                        + Number(data.market_data.price_change_percentage_24h_in_currency.usd).toFixed(2) + ' | ' 
+                        + Number(data.market_data.price_change_percentage_7d_in_currency.usd).toFixed(2),
+                    inline: true,
                 },
                 platforms,
                 {
                     name: '\u200b',
-                    value: 'Powered by Coingecko',
+                    value: 'Powered by [Coingecko](https://www.coingecko.com/en/coins/' + listedCoin.id + ')', 
                     inline: true,
                 },
             ]
@@ -140,7 +124,7 @@ async function Msg(message, FullList) {
                 embed: {
                     color: 0x0099ff,
                     title: listedCoin.name.toUpperCase(),
-                    url: `https://www.coingecko.com/en/coins/` + listedCoin.id,
+                    url: data.links.homepage[0],
                     thumbnail: { url: data.image.large },
                     fields,
                 },
